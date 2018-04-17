@@ -1,0 +1,11 @@
+.plugins-grid span[title=WiserClearAllFiltersPlugin]::before {
+  content: '';
+  display: inline-block;
+  background-image: url('/plugins/WiserClearAllFiltersPlugin/images/wiser-logo-white.svg');
+  background-size: 20px 20px;
+  vertical-align: middle;
+  width: 25px;
+  height: 25px;
+  margin-left: -25px;
+  background-position-x: 3px;
+}
