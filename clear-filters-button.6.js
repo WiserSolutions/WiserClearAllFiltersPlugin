@@ -8,7 +8,7 @@ prism.on('dashboardloaded', function(event, args) {
   dashboard.on('initialized', function() {
     // Wait a few seconds as the event fires before the dashboard is actually
     // ready.
-    window.setTimeout(addClearFiltersButton, 2000);
+    window.setTimeout(addClearFiltersButton);
   });
 });
 
@@ -22,21 +22,18 @@ function addClearFiltersButton() {
   // Create the button
   /* eslint-disable indent */
   let $clearFiltersButton = $([
-    `<div id="${clearFiltersButtonId}" class="btn-immutable btn-action big-btn fl-icon-container" title="Clear filters">`,
-      '<span class="fl-cancel"></span>',
-      '<div class="action-caption fl-icon-text">',
-        'Clear Filters',
-      '</div>',
-    '</div>'
+    `<button id="${clearFiltersButtonId}" class="btn btn--transp" title="Clear filters">`,
+      '<span class="btn__text">Clear Filters</span>',
+    '</button>'
   ].join(''));
   /* eslint-enable indent */
 
   // Add the button to the dashboard actions box
-  let $actionsBox = $('.actions-box');
-  $actionsBox.append($clearFiltersButton);
+  let $toolbarRight = $('.prism-toolbar__section--right .prism-toolbar__cell.btns-holder');
+  $toolbarRight.prepend($clearFiltersButton);
 
   // Add event handler for when the button is clicked
-  $actionsBox.on('click', clearFiltersButtonSelector, clearFilters);
+  $toolbarRight.on('click', clearFiltersButtonSelector, clearFilters);
 }
 
 function clearFilters() {
