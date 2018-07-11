@@ -43,7 +43,7 @@ function clearFilters() {
   dashboard.filters.clear();
 
   // Set the filters back to the default (saved/published) filters
-  dashboard.defaultFilters.forEach(function(filter) {
+  (dashboard.defaultFilters || []).forEach(function(filter) {
     dashboard.filters.update(filter, { save: true, refresh: false });
   });
   dashboard.refresh();
