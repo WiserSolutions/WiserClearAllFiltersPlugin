@@ -3,9 +3,7 @@
 Adds a button to Sisense dashboard toolbars which will reset a shared
 dashboard's filters back to the published state.
 
-![WiserClearAllFiltersPlugin Screenshot](/images/screenshot.png)
-
-Tested to work with Sisense **6.7.1.14501**.
+Tested to work with Sisense **7.1.2.11001**.
 
 ## Installation
 
